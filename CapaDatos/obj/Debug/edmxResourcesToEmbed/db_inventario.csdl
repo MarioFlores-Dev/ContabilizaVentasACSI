@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_inventario_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="db_inventario_Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="rpt_poliza_ventas_posFEL" ReturnType="Collection(db_inventario_Model.rpt_poliza_ventas_posFEL_Result)">
+      <Parameter Name="Id_Empresa" Mode="In" Type="Int32" />
+      <Parameter Name="Id_caja" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha_inicial" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha_final" Mode="In" Type="DateTime" />
+      <Parameter Name="Tipo_reporte" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_poliza" Mode="In" Type="String" />
+      <Parameter Name="Numero_poliza" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_verificarTraslados" ReturnType="Collection(db_inventario_Model.sp_verificarTraslados_Result)">
+      <Parameter Name="id_empresa" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="String" />
+      <Parameter Name="mes" Mode="In" Type="String" />
+      <Parameter Name="tipo" Mode="In" Type="String" />
+      <Parameter Name="caja" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="rpt_poliza_ventas_posFEL1" ReturnType="Collection(db_inventario_Model.rpt_poliza_ventas_posFEL1_Result)">
+      <Parameter Name="Id_Empresa" Mode="In" Type="Int32" />
+      <Parameter Name="Id_caja" Mode="In" Type="Int32" />
+      <Parameter Name="Fecha_inicial" Mode="In" Type="DateTime" />
+      <Parameter Name="Fecha_final" Mode="In" Type="DateTime" />
+      <Parameter Name="Tipo_reporte" Mode="In" Type="Int32" />
+      <Parameter Name="Tipo_poliza" Mode="In" Type="String" />
+      <Parameter Name="Numero_poliza" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Tbl_Cajas" EntityType="db_inventario_Model.Tbl_Cajas" />
+    <FunctionImport Name="sp_getEmpresas" ReturnType="Collection(db_inventario_Model.sp_getEmpresas_Result)" />
+  </EntityContainer>
+  <ComplexType Name="rpt_poliza_ventas_posFEL_Result">
+    <Property Type="String" Name="nombre_empresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Cuenta_Contable" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="nombre_cuenta" Nullable="true" MaxLength="84" />
+    <Property Type="Decimal" Name="debe" Nullable="false" Precision="2" Scale="2" />
+    <Property Type="Decimal" Name="haber" Nullable="false" Precision="2" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="sp_verificarTraslados_Result">
+    <Property Type="Int32" Name="ID_EMPRESA" Nullable="false" />
+    <Property Type="String" Name="ANIO" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="MES" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="ID_BANCO" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="TIPO" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="NUMERO" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="DIA" Nullable="true" />
+    <Property Type="String" Name="DESCRIPCION" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="SISTEMA" Nullable="true" />
+    <Property Type="DateTime" Name="FECHA_HORA_SISTEMA" Nullable="true" Precision="23" />
+    <Property Type="String" Name="USUARIO" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="CONCILIADO" Nullable="true" />
+    <Property Type="Decimal" Name="TASA_TRANSACCION" Nullable="true" Precision="10" Scale="2" />
+    <Property Type="Decimal" Name="TASA_PROMEDIO" Nullable="true" Precision="10" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="rpt_poliza_ventas_posFEL1_Result">
+    <Property Type="String" Name="nombre_empresa" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Cuenta_Contable" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="nombre_cuenta" Nullable="true" MaxLength="84" />
+    <Property Type="Decimal" Name="debe" Nullable="false" Precision="2" Scale="2" />
+    <Property Type="Decimal" Name="haber" Nullable="false" Precision="2" Scale="2" />
+  </ComplexType>
+  <EntityType Name="Tbl_Cajas">
+    <Key>
+      <PropertyRef Name="Id_Empresa" />
+      <PropertyRef Name="Id_Caja" />
+    </Key>
+    <Property Name="Id_Empresa" Type="Int32" Nullable="false" />
+    <Property Name="Id_Caja" Type="Int32" Nullable="false" />
+    <Property Name="Observaciones" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="sp_getEmpresas_Result">
+    <Property Type="Int32" Name="Id_Empresa" Nullable="false" />
+    <Property Type="String" Name="Nombre_Empresa" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>

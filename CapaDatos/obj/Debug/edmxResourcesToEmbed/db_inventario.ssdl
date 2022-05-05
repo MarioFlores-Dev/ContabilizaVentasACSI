@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_inventario_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Tbl_Cajas">
+    <Key>
+      <PropertyRef Name="Id_Empresa" />
+      <PropertyRef Name="Id_Caja" />
+    </Key>
+    <Property Name="Id_Empresa" Type="int" Nullable="false" />
+    <Property Name="Id_Caja" Type="int" Nullable="false" />
+    <Property Name="Observaciones" Type="char" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Function Name="rpt_poliza_ventas_posFEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id_Empresa" Type="int" Mode="In" />
+    <Parameter Name="Id_caja" Type="int" Mode="In" />
+    <Parameter Name="Fecha_inicial" Type="datetime" Mode="In" />
+    <Parameter Name="Fecha_final" Type="datetime" Mode="In" />
+    <Parameter Name="Tipo_reporte" Type="int" Mode="In" />
+    <Parameter Name="Tipo_poliza" Type="char" Mode="In" />
+    <Parameter Name="Numero_poliza" Type="char" Mode="In" />
+  </Function>
+  <Function Name="sp_getEmpresas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_verificarTraslados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id_empresa" Type="int" Mode="In" />
+    <Parameter Name="anio" Type="varchar" Mode="In" />
+    <Parameter Name="mes" Type="varchar" Mode="In" />
+    <Parameter Name="tipo" Type="varchar" Mode="In" />
+    <Parameter Name="caja" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="db_inventario_ModelStoreContainer">
+    <EntitySet Name="Tbl_Cajas" EntityType="Self.Tbl_Cajas" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
