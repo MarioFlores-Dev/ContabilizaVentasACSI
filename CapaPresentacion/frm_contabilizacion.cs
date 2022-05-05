@@ -124,5 +124,11 @@ namespace CapaPresentacion {
         {
             
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_verificarTraslados frmTraslados = new frm_verificarTraslados();
+            frmTraslados.Show();
+        }
     }
 }
