@@ -32,6 +32,7 @@ namespace CapaPresentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_contabilizacion));
             this.pnl_parametros = new System.Windows.Forms.Panel();
+            this.btn_verificarTraslados = new System.Windows.Forms.Button();
             this.btn_contabilizar = new System.Windows.Forms.Button();
             this.lbl_parametros = new System.Windows.Forms.Label();
             this.lbl_empresa = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@ namespace CapaPresentacion
             this.lbl_debe = new System.Windows.Forms.Label();
             this.lbl_haber = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_verificarTraslados = new System.Windows.Forms.Button();
             this.pnl_parametros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dataContabilizacion)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +85,19 @@ namespace CapaPresentacion
             this.pnl_parametros.TabIndex = 19;
             this.pnl_parametros.Tag = "";
             // 
+            // btn_verificarTraslados
+            // 
+            this.btn_verificarTraslados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_verificarTraslados.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_verificarTraslados.Location = new System.Drawing.Point(697, 144);
+            this.btn_verificarTraslados.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_verificarTraslados.Name = "btn_verificarTraslados";
+            this.btn_verificarTraslados.Size = new System.Drawing.Size(164, 36);
+            this.btn_verificarTraslados.TabIndex = 19;
+            this.btn_verificarTraslados.Text = "Verificar Traslados";
+            this.btn_verificarTraslados.UseVisualStyleBackColor = true;
+            this.btn_verificarTraslados.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btn_contabilizar
             // 
             this.btn_contabilizar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -105,7 +118,7 @@ namespace CapaPresentacion
             this.lbl_parametros.Location = new System.Drawing.Point(15, 14);
             this.lbl_parametros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_parametros.Name = "lbl_parametros";
-            this.lbl_parametros.Size = new System.Drawing.Size(213, 16);
+            this.lbl_parametros.Size = new System.Drawing.Size(309, 23);
             this.lbl_parametros.TabIndex = 17;
             this.lbl_parametros.Text = "Datos para trasladar las ventas";
             // 
@@ -116,7 +129,7 @@ namespace CapaPresentacion
             this.lbl_empresa.Location = new System.Drawing.Point(33, 60);
             this.lbl_empresa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_empresa.Name = "lbl_empresa";
-            this.lbl_empresa.Size = new System.Drawing.Size(52, 15);
+            this.lbl_empresa.Size = new System.Drawing.Size(80, 19);
             this.lbl_empresa.TabIndex = 2;
             this.lbl_empresa.Text = "Empresa";
             // 
@@ -140,7 +153,7 @@ namespace CapaPresentacion
             this.lbl_caja.Location = new System.Drawing.Point(187, 60);
             this.lbl_caja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_caja.Name = "lbl_caja";
-            this.lbl_caja.Size = new System.Drawing.Size(32, 15);
+            this.lbl_caja.Size = new System.Drawing.Size(48, 19);
             this.lbl_caja.TabIndex = 3;
             this.lbl_caja.Text = "Caja";
             // 
@@ -150,7 +163,7 @@ namespace CapaPresentacion
             this.txt_numeroPoliza.Location = new System.Drawing.Point(719, 96);
             this.txt_numeroPoliza.Margin = new System.Windows.Forms.Padding(4);
             this.txt_numeroPoliza.Name = "txt_numeroPoliza";
-            this.txt_numeroPoliza.Size = new System.Drawing.Size(132, 21);
+            this.txt_numeroPoliza.Size = new System.Drawing.Size(132, 28);
             this.txt_numeroPoliza.TabIndex = 15;
             this.helpText.SetToolTip(this.txt_numeroPoliza, "Formato para ingresar número de poliza: 22050201(año|mes|dia|caja)");
             // 
@@ -161,9 +174,10 @@ namespace CapaPresentacion
             this.lbl_fechaI.Location = new System.Drawing.Point(288, 60);
             this.lbl_fechaI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_fechaI.Name = "lbl_fechaI";
-            this.lbl_fechaI.Size = new System.Drawing.Size(76, 15);
+            this.lbl_fechaI.Size = new System.Drawing.Size(114, 19);
             this.lbl_fechaI.TabIndex = 4;
             this.lbl_fechaI.Text = "Fecha Inicial";
+            this.helpText.SetToolTip(this.lbl_fechaI, "prueba");
             // 
             // cmb_tipoPoliza
             // 
@@ -174,7 +188,7 @@ namespace CapaPresentacion
             this.cmb_tipoPoliza.Location = new System.Drawing.Point(586, 94);
             this.cmb_tipoPoliza.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_tipoPoliza.Name = "cmb_tipoPoliza";
-            this.cmb_tipoPoliza.Size = new System.Drawing.Size(108, 24);
+            this.cmb_tipoPoliza.Size = new System.Drawing.Size(108, 29);
             this.cmb_tipoPoliza.TabIndex = 14;
             this.cmb_tipoPoliza.Text = "Seleccione";
             // 
@@ -185,7 +199,7 @@ namespace CapaPresentacion
             this.dt_fechaInicial.Location = new System.Drawing.Point(288, 96);
             this.dt_fechaInicial.Margin = new System.Windows.Forms.Padding(4);
             this.dt_fechaInicial.Name = "dt_fechaInicial";
-            this.dt_fechaInicial.Size = new System.Drawing.Size(125, 21);
+            this.dt_fechaInicial.Size = new System.Drawing.Size(125, 28);
             this.dt_fechaInicial.TabIndex = 5;
             // 
             // lbl_fechaU
@@ -195,7 +209,7 @@ namespace CapaPresentacion
             this.lbl_fechaU.Location = new System.Drawing.Point(444, 60);
             this.lbl_fechaU.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_fechaU.Name = "lbl_fechaU";
-            this.lbl_fechaU.Size = new System.Drawing.Size(70, 15);
+            this.lbl_fechaU.Size = new System.Drawing.Size(102, 19);
             this.lbl_fechaU.TabIndex = 6;
             this.lbl_fechaU.Text = "Fecha Final";
             // 
@@ -210,7 +224,7 @@ namespace CapaPresentacion
             this.cmb_cajas.Location = new System.Drawing.Point(187, 93);
             this.cmb_cajas.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_cajas.Name = "cmb_cajas";
-            this.cmb_cajas.Size = new System.Drawing.Size(78, 24);
+            this.cmb_cajas.Size = new System.Drawing.Size(78, 29);
             this.cmb_cajas.TabIndex = 12;
             this.cmb_cajas.Text = "Seleccione";
             // 
@@ -221,7 +235,7 @@ namespace CapaPresentacion
             this.dt_fechafinal.Location = new System.Drawing.Point(444, 96);
             this.dt_fechafinal.Margin = new System.Windows.Forms.Padding(4);
             this.dt_fechafinal.Name = "dt_fechafinal";
-            this.dt_fechafinal.Size = new System.Drawing.Size(125, 21);
+            this.dt_fechafinal.Size = new System.Drawing.Size(125, 28);
             this.dt_fechafinal.TabIndex = 7;
             // 
             // lbl_numeroPoliza
@@ -231,7 +245,7 @@ namespace CapaPresentacion
             this.lbl_numeroPoliza.Location = new System.Drawing.Point(719, 60);
             this.lbl_numeroPoliza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_numeroPoliza.Name = "lbl_numeroPoliza";
-            this.lbl_numeroPoliza.Size = new System.Drawing.Size(102, 15);
+            this.lbl_numeroPoliza.Size = new System.Drawing.Size(156, 19);
             this.lbl_numeroPoliza.TabIndex = 11;
             this.lbl_numeroPoliza.Text = "Numero de poliza";
             // 
@@ -245,7 +259,7 @@ namespace CapaPresentacion
             this.cmb_empresa.Location = new System.Drawing.Point(33, 94);
             this.cmb_empresa.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_empresa.Name = "cmb_empresa";
-            this.cmb_empresa.Size = new System.Drawing.Size(127, 24);
+            this.cmb_empresa.Size = new System.Drawing.Size(127, 29);
             this.cmb_empresa.TabIndex = 10;
             this.cmb_empresa.Text = "Seleccione";
             this.helpText.SetToolTip(this.cmb_empresa, "Seleccione una empresa");
@@ -257,7 +271,7 @@ namespace CapaPresentacion
             this.lbl_tipoPoliza.Location = new System.Drawing.Point(586, 60);
             this.lbl_tipoPoliza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_tipoPoliza.Name = "lbl_tipoPoliza";
-            this.lbl_tipoPoliza.Size = new System.Drawing.Size(81, 15);
+            this.lbl_tipoPoliza.Size = new System.Drawing.Size(123, 19);
             this.lbl_tipoPoliza.TabIndex = 9;
             this.lbl_tipoPoliza.Text = "Tipo de poliza";
             // 
@@ -268,7 +282,7 @@ namespace CapaPresentacion
             this.label2.Location = new System.Drawing.Point(239, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(429, 23);
+            this.label2.Size = new System.Drawing.Size(652, 36);
             this.label2.TabIndex = 20;
             this.label2.Text = "Contabilización de ventas de punto de venta";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -284,6 +298,7 @@ namespace CapaPresentacion
             this.dgv_dataContabilizacion.Location = new System.Drawing.Point(21, 291);
             this.dgv_dataContabilizacion.Name = "dgv_dataContabilizacion";
             this.dgv_dataContabilizacion.ReadOnly = true;
+            this.dgv_dataContabilizacion.RowHeadersWidth = 62;
             this.dgv_dataContabilizacion.RowTemplate.Height = 24;
             this.dgv_dataContabilizacion.Size = new System.Drawing.Size(879, 202);
             this.dgv_dataContabilizacion.TabIndex = 21;
@@ -295,7 +310,7 @@ namespace CapaPresentacion
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(607, 513);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.Size = new System.Drawing.Size(75, 23);
             this.label1.TabIndex = 22;
             this.label1.Text = "Debe: ";
             // 
@@ -304,7 +319,7 @@ namespace CapaPresentacion
             this.lbl_debe.AutoSize = true;
             this.lbl_debe.Location = new System.Drawing.Point(654, 513);
             this.lbl_debe.Name = "lbl_debe";
-            this.lbl_debe.Size = new System.Drawing.Size(33, 17);
+            this.lbl_debe.Size = new System.Drawing.Size(48, 23);
             this.lbl_debe.TabIndex = 23;
             this.lbl_debe.Text = "0.00";
             this.lbl_debe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -314,7 +329,7 @@ namespace CapaPresentacion
             this.lbl_haber.AutoSize = true;
             this.lbl_haber.Location = new System.Drawing.Point(799, 513);
             this.lbl_haber.Name = "lbl_haber";
-            this.lbl_haber.Size = new System.Drawing.Size(33, 17);
+            this.lbl_haber.Size = new System.Drawing.Size(48, 23);
             this.lbl_haber.TabIndex = 25;
             this.lbl_haber.Text = "0.00";
             this.lbl_haber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -325,26 +340,13 @@ namespace CapaPresentacion
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(752, 513);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 16);
+            this.label4.Size = new System.Drawing.Size(69, 23);
             this.label4.TabIndex = 24;
             this.label4.Text = "Haber";
             // 
-            // btn_verificarTraslados
-            // 
-            this.btn_verificarTraslados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_verificarTraslados.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_verificarTraslados.Location = new System.Drawing.Point(697, 144);
-            this.btn_verificarTraslados.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_verificarTraslados.Name = "btn_verificarTraslados";
-            this.btn_verificarTraslados.Size = new System.Drawing.Size(164, 36);
-            this.btn_verificarTraslados.TabIndex = 19;
-            this.btn_verificarTraslados.Text = "Verificar Traslados";
-            this.btn_verificarTraslados.UseVisualStyleBackColor = true;
-            this.btn_verificarTraslados.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frm_contabilizacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(925, 555);
